@@ -16,6 +16,8 @@ Leave-One-Subject-Out-Cross-Validation (LOSOCV) is to test one single participan
 CUDA_VISIBLE_DEVICES=0 python train_hand_role.py --subj=participant_id --cuda
 ```
 The trained model is saved in the _DataLoader_HandRole_/_Sub{participant id}_/_checkpoints_/ folder.  
-The training log (Training_process_Home_sub{participant id}.txt) is saved in the _results_/_HandRole_/_{LOSOCV condition}_/ folder.  
+The training log (Training_process_{LOSOCV condition}_sub{participant id}.txt) is saved in the _results_/_HandRole_/_{LOSOCV condition}_/ folder.  
 
 ## 4. Launch testing 
+
+
