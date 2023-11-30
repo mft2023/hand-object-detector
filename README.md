@@ -11,7 +11,7 @@ In this repository is modified from the original [Hand Object Detector](https://
 In [load_handrole_dataset.py](hand_object_detector/load_handrole_dataset.py), please set the data augmentation mode (flip images) and correct absolute path to the folders of images and labels in order to extract hand features for data loaders. In each loader (mini-batch data), it contains image filename, hand side, hand features, and its label.
 
 ## 3. Launch training
-Leave-One-Subject-Out-Cross-Validation (LOSOCV) is to test one single participant with train the model with the data from rest participants. Thereofre, the subj here is the participant that not involved in the training set.  
+Leave-One-Subject-Out-Cross-Validation (LOSOCV) is to test one single participant with training the model with the data from the rest of participants. Thereofre, the subj here is the participant that not involved in the training set.  
 ```
 CUDA_VISIBLE_DEVICES=0 python train_hand_role.py --subj=participant_id --cuda
 ```
