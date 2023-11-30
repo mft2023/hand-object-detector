@@ -7,7 +7,7 @@ _Datasets_ folder: stores raw images from Home and HomeLab datasets. The structu
 _LOSOCV_manip_Home_labels_ folder: stores filename, hand side, label {0: stabilization, 1: manipulation} for Home dataset. Labels for the HomeLab dataset is the same format.  
 _Results_ folder: stores hand role prediction for each image, including hand side and prediction {0: stabilization, 1: manipulation}.  
 
-## 2. Create data loader to minimize GPU memory usage. (optional)
+## 2. Create data loader to minimize GPU memory usage.
 In [load_handrole_dataset.py](hand_object_detector/load_handrole_dataset.py), please set the data augmentation mode (flip images) and correct absolute path to the folders of images and labels in order to extract hand features for data loaders. In each loader (mini-batch data), it contains image filename, hand side, hand features, and its label.
 
 ## 3. Launch training
