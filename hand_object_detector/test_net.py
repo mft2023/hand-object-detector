@@ -83,7 +83,6 @@ def parse_args():
   parser.add_argument('--vis', dest='vis',
                       help='visualization mode',
                       action='store_true')
-
   parser.add_argument('--model_name',
                       help='directory to save models', default='handobj', required=False, type=str)
   parser.add_argument('--save_name', 

@@ -1,2 +1,0 @@
-hand state: R-N
-hand state: L-P

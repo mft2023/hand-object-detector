@@ -19,7 +19,7 @@ import argparse
 import linecache
 def parse_args():
     parser=argparse.ArgumentParser(description='run hand role classification')
-    parser.add_argument('--subj',dest='subj',help='which subject',type=int)
+    parser.add_argument('--subj',dest='subj',help='which leave out subject',type=int)
     
     args=parser.parse_args()
     return args
@@ -91,17 +91,17 @@ def Cal_weight(txt_path):
 # decide loss function and optimizer
 optimizer = optim.SGD(handrole.parameters(), lr=0.0001, momentum=0.9, nesterov=True)
 lr_scheduler=optim.lr_scheduler.ReduceLROnPlateau(optimizer,mode='min',factor=0.001,patience=2,verbose=True)
-###########################################################
+
 subject=str(args.subj);
 num_epochs=100;
 dataloader_folder='{path to your training dataloader folder}/DataLoader_HandRole/Sub'+subject+'/';
 dataloader_folder_val='{path to your validation dataloader folder}/DataLoader_HandRole/Sub'+subject+'/';
-train_txt_path='{path to the env}/hand_object_detector/LOSOCV_manip_Home_HomeLab_labels/LOSOCV_Home_HomeLab_sub'+subject+'_Manipulation_train.txt';
-save_folder='{path to results folder}/HandRole/LOSOCV_manip_Home_HomeLab/';
-training_process_path=save_folder+'/Sub'+subject+'/Training_process_Home_HomeLab_sub'+subject+'.txt';
+train_txt_path='{path to the env}/hand_object_detector/LOSOCV_manip_Home_labels/LOSOCV_Home_sub'+subject+'_Manipulation_train.txt';
+save_folder='{path to results folder}/HandRole/LOSOCV_manip_Home/';
+training_process_path=save_folder+'/Sub'+subject+'/Training_process_Home_sub'+subject+'.txt';
 save_model_path='';
-train_loader_list=glob.glob(dataloader_folder+'/Dataloader/Home_HomeLab_train_loader_*.gz');
-val_loader_list=glob.glob(dataloader_folder_val+'/Dataloader/Home_HomeLab_val_loader_*.gz');
+train_loader_list=glob.glob(dataloader_folder+'/Dataloader/Home_train_loader_*.gz');
+val_loader_list=glob.glob(dataloader_folder_val+'/Dataloader/Home_val_loader_*.gz');
 
 with torch.no_grad():
     weights=torch.FloatTensor([1,20])

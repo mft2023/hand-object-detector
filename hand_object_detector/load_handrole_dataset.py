@@ -350,14 +350,14 @@ with torch.no_grad():
 
 ###### geting a list of all targeted images
 subject=str(args.subj);
-label_folder='{path to label folder}/hand_object_detector/LOSOCV_manip_Home_HomeLab_labels/';
+label_folder='{path to label folder}/hand_object_detector/LOSOCV_manip_Home_labels/';
 dataloader_folder='{path to data loader folder}/DataLoader_HandRole/';
 image_folder='{path to raw images}/hand_object_detector/Datasets/';
 flip='';# {'': no data augmentation,{'flip'}: data augmentation}
-save_loader_name=dataloader_folder+'/Sub'+subject+'/Dataloader/Home_HomeLab_'+args.dataset_mode+'_loader_'+str(args.set_mode)+'_Sub'+subject+'_'+flip+'.pt';
-labeling_txt_path_train=label_folder+'/LOSOCV_Home_HomeLab_sub'+subject+'_Manipulation_train_manip.txt';
-labeling_txt_path_val=label_folder+'/LOSOCV_Home_HomeLab_sub'+subject+'_Manipulation_val.txt';
-labeling_txt_path_test=label_folder+'/LOSOCV_Home_HomeLab_sub'+subject+'_Manipulation_test.txt';
+save_loader_name=dataloader_folder+'/Sub'+subject+'/Dataloader/Home_'+args.dataset_mode+'_loader_'+str(args.set_mode)+'_Sub'+subject+'_'+flip+'.pt';
+labeling_txt_path_train=label_folder+'/LOSOCV_Home_sub'+subject+'_Manipulation_train.txt';
+labeling_txt_path_val=label_folder+'/LOSOCV_Home_sub'+subject+'_Manipulation_val.txt';
+labeling_txt_path_test=label_folder+'/LOSOCV_Home_sub'+subject+'_Manipulation_test.txt';
 
 if not os.path.exists(os.path.join(dataloader_folder,'Sub'+subject)):
     os.makedirs(os.path.join(dataloader_folder,'Sub'+subject));

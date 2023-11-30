@@ -372,7 +372,7 @@ if __name__ == '__main__':
                     hand_dets = cls_dets.cpu().numpy()
                   
             if vis:
-              im2show = vis_detections_filtered_objects_PIL(im2show, obj_dets, hand_dets, im_file, thresh_hand, thresh_obj)###### add im_file
+              im2show = vis_detections_filtered_objects_PIL(im2show, obj_dets, hand_dets, im_file, thresh_hand, thresh_obj)
               
             misc_toc = time.time()
             nms_time = misc_toc - misc_tic
