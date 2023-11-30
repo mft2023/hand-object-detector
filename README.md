@@ -11,7 +11,9 @@ _Results_ folder: stores hand role prediction for each image, including hand sid
 In [load_handrole_dataset.py](hand_object_detector/load_handrole_dataset.py), please set the data augmentation mode (flip images) and correct absolute path to the folders of images and labels in order to extract hand features for data loaders. In each loader (mini-batch data), it contains image filename, hand side, hand features, and its label.
 
 ## 3. Launch training
-Leave-One-Subject-Out-Cross-Validation (LOSOCV) is to test one single participant with train the model with the data from rest participants. Thereofre, the subj here is the participant that not involved in the training set.
+Leave-One-Subject-Out-Cross-Validation (LOSOCV) is to test one single participant with train the model with the data from rest participants. Thereofre, the subj here is the participant that not involved in the training set.  
 ```
 CUDA_VISIBLE_DEVICES=0 python train_hand_role.py --subj={participant id} --cuda
 ```
+The trained model is saved in the _DataLoader_HandRole_/_Sub{participant id}_/_checkpoints_/ folder.  
+The training log (Training_process_Home_sub{participant id}.txt) is saved in the _results_/_HandRole_/_{LOSOCV condition}_/ folder.  
