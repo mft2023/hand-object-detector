@@ -142,7 +142,7 @@ for epoch in range(start_epoch,num_epochs):
         print('Load trian_loader '+str(j)+' takes: %.2f minutes' % (diff_time/60))
         for i, train_batch in enumerate(train_loader):
             framename=train_batch[0];
-            hand_id=train_batch[1][0];#hand id: {0:'L', 1:'R'}
+            hand_id=train_batch[1][0];#{0:'L', 1:'R'}
             hand_bbx=train_batch[1][1];
             handrole_fea=train_batch[2];
             label=train_batch[3];
@@ -153,7 +153,7 @@ for epoch in range(start_epoch,num_epochs):
             optimizer.zero_grad()
             # forward + backward + optimize
             prob = handrole(handrole_fea) 
-            prob = prob.reshape(len(label),2);# to match label number (1,num_classes)
+            prob = prob.reshape(len(label),2);
             pred=[];
             for k in range(len(label)):
                 if prob[k][0]>prob[k][1]:
@@ -173,7 +173,6 @@ for epoch in range(start_epoch,num_epochs):
         torch.cuda.empty_cache()
         accuracy_epoch.append(accuracy/len_train_loader)
     lr_scheduler.step(train_loss)
-    #print('lr: ',optimizer.param_groups[0]["lr"])
     end_loading=datetime.now();
     diff_time=(end_loading-start_loading).total_seconds();
     print('This training epoch takes: %.2f minutes' % (diff_time/60))
@@ -199,7 +198,7 @@ for epoch in range(start_epoch,num_epochs):
             len_val_loader=len(val_loader);
             for i, val_batch in enumerate(val_loader):
                 framename_val=val_batch[0];
-                hand_id_val=val_batch[1][0];#hand id: {0:'L', 1:'R'}
+                hand_id_val=val_batch[1][0];#{0:'L', 1:'R'}
                 hand_bbx_val=val_batch[1][1];
                 handrole_fea_val=val_batch[2];
                 label_val=val_batch[3];                
@@ -209,7 +208,7 @@ for epoch in range(start_epoch,num_epochs):
                 label_val.to(device)
                 # forward + backward + optimize
                 prob_val = handrole(handrole_fea_val);
-                prob_val = prob_val.reshape(len(label_val),2);# (1,2)
+                prob_val = prob_val.reshape(len(label_val),2);
                 
                 pred_val=[];
                 for k in range(len(label_val)):
