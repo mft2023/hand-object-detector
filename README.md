@@ -13,11 +13,17 @@ In [load_handrole_dataset.py](hand_object_detector/load_handrole_dataset.py), pl
 ## 3. Launch training
 Leave-One-Subject-Out-Cross-Validation (LOSOCV) is to test one single participant with training the model with the data from the rest of participants. Thereofre, the subj here is the participant that not involved in the training set.  
 ```
-CUDA_VISIBLE_DEVICES=0 python train_hand_role.py --subj=participant_id --cuda
+CUDA_VISIBLE_DEVICES=0 python train_hand_role.py --cuda --subj=participant_id
 ```
 The trained model is saved in the _DataLoader_HandRole_/_Sub{participant id}_/_checkpoints_/ folder.  
 The training log, `Training_process_{LOSOCV_condition}_sub{participant id}.txt`, is saved in the _results_/_HandRole_/_{LOSOCV condition}_/ folder.  
 
-## 4. Launch testing 
+## 4. Launch testing  
+Choosing the best model in the validation set in each LOSOCV iteration and test it in the left out participant.  
+I also generated predictions in text files while generating image output in function `draw_hand_mask` in [vis_hand_obj.py]{hand_object_detector/lib/model/utils/viz_hand_obj.py}
 
+```
+CUDA_VISIBLE_DEVICES=0 python demo.py --cuda --checkepoch={} --checkpoint={} --subj={tested participant ID} image_dir={path to the folder of tested images} --save-dir={path to the folder of generated predictions}
+--load_dir={path to the best model}
+```
 
