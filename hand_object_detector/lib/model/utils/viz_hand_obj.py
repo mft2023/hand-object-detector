@@ -56,23 +56,17 @@ def draw_hand_mask(image, draw, hand_idx, hand_bbox, hand_score, side, state, wi
     draw.rectangle([hand_bbox[0], max(0, hand_bbox[1]-30), hand_bbox[0]+62, max(0, hand_bbox[1]-30)+30], fill=(255, 255, 255), outline=hand_rgb[side_idx], width=4)
     draw.text((hand_bbox[0]+6, max(0, hand_bbox[1]-30)-2), f'{side_map3[int(float(side))]}-{state_map2[int(float(state))]}', font=font, fill=(0,0,0)) # 
     ###### create results.txt #########
-    image_name=image_path.split("/")[-1][:-4];
-    ##################################
+    image_name=image_path.split("/")[-1][:-4];    
     txt_folder=image_path.split(image_name)[0];#save under the image folder
-    #sub=image_path.split("/")[4];
-    #vset=image_path.split("/")[5];
-    #txt_folder='//mnt/wwn-0x5000c500dc5d7cdc-part2/'+sub+'/'+vset+'/';
-    ################################
     if not os.path.exists(txt_folder+'/Shan_bbx/'):
         os.makedirs(txt_folder+'/Shan_bbx/');
         #print(txt_folder+'/Shan_bbx/')
     if os.path.exists(txt_folder+'/Shan_bbx/'+image_name+'.txt'):
-        save_file_path=open(txt_folder+'/Shan_bbx/'+image_name+'.txt','a')#append hand state to .txt
-        
+        save_file_path=open(txt_folder+'/Shan_bbx/'+image_name+'.txt','a')#append hand state to .txt        
     else:
         save_file_path=open(txt_folder+'/Shan_bbx/'+image_name+'.txt','w')#create a new .txt
     save_file_path.write(str('hand state: '+f'{side_map3[int(float(side))]}-{state_map2[int(float(state))]}'+'\n'))
-    save_file_path.write(str(f'{side_map3[int(float(side))]}'+' hand bbx: '+str(hand_bbox)+'\n'))###################
+    save_file_path.write(str(f'{side_map3[int(float(side))]}'+' hand bbx: '+str(hand_bbox)+'\n'))
     save_file_path.close()
     ##################################
     return image
