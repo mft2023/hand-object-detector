@@ -37,7 +37,7 @@ If you find this repository useful in your research, please consider citing:
 @article{
     Author = {Meng-Fen Tsai,Rosalie H. Wang, and Zariffa, José},
     Title = {Recognizing hand use and hand role at home after stroke from egocentric video},
-    Journal = {PLOS Digital Health 2.10 (2023): e0000361},
+    Journal = {PLOS Digital Health 2.10: e0000361},
     Year = {2023}
 }
 ```
