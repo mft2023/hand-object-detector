@@ -27,7 +27,8 @@ The trained model is saved in the _DataLoader_HandRole_/_Sub{participant id}_/_c
 The training log, `Training_process_{LOSOCV_condition}_sub{participant id}.txt`, is saved in the _results_/_HandRole_/_{LOSOCV condition}_/ folder.  
 
 ## 4. Launch testing  
-Choosing the best model in the validation set in each LOSOCV iteration and testing it in the data of a left-out participant.  
+Choosing the best model in the validation set in each LOSOCV iteration and testing the model in the data of a left-out participant.  
+A tested model and save folder can be determined in [results_HandRole.py]().
 ```
 CUDA_VISIBLE_DEVICES=0 python results_HandRole.py --cuda --subj=participant_id
 ```
