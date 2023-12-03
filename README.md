@@ -7,10 +7,7 @@ Portable object contact predictions were categorized as hand-object interactions
 In addition to predicted images, predictions in text files are also generated simultaneously in the function `draw_hand_mask` in [vis_hand_obj.py](hand_object_detector/lib/model/utils/viz_hand_obj.py)  
 ```
 CUDA_VISIBLE_DEVICES=0 python demo.py --cuda --checkepoch=8 --checkpoint=132028 --subj={participant ID} --vis --image_dir={path to the folder of raw images} --save_dir={path to results folder}
-```
-
-
-  
+```  
 # ***Hand Role Classification***  
 ## 1. Create three folders
 `Datasets` folder: stores raw images from Home and HomeLab datasets. The structure was _Datasets_/{dataset name}/{participant id}/{video id}/images.  
