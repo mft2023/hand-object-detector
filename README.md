@@ -28,7 +28,7 @@ The training log, `Training_process_{LOSOCV_condition}_sub{participant id}.txt`,
 
 ## 4. Launch testing  
 Choosing the best model in the validation set in each LOSOCV iteration and testing the model in the data of a left-out participant.  
-A tested model and save folder can be determined in [results_HandRole.py]().
+A tested model and save folder can be determined in [results_HandRole.py](hand_object_detector/results_HandRole.py).
 ```
 CUDA_VISIBLE_DEVICES=0 python results_HandRole.py --cuda --subj=participant_id
 ```
