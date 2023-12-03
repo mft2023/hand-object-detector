@@ -31,4 +31,13 @@ A tested model and save folder can be determined in [results_HandRole.py](hand_o
 ```
 CUDA_VISIBLE_DEVICES=0 python results_HandRole.py --cuda --subj=participant_id
 ```
-
+# Cite
+If you find this repository useful in your research, please consider citing:
+```
+@article{
+    Author = {Meng-Fen Tsai,Rosalie H. Wang, and Zariffa, José},
+    Title = {Recognizing hand use and hand role at home after stroke from egocentric video},
+    Journal = {PLOS Digital Health 2.10 (2023): e0000361},
+    Year = {2023}
+}
+```
