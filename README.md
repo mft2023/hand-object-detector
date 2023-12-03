@@ -1,7 +1,7 @@
 This repository stores open-source codes for the publication: [Recognizing hand use and hand role at home after stroke from egocentric video](https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000361).  
 In this repository is modified from the original [Hand Object Detector](https://github.com/ddshan/hand_object_detector) to extract hand features for hand role classification. Please clone the original GitHub and replace the _hand-object-detector_ folder with the _hand-object-detector_ folder in this repository.  
 
-# ***Hand-Object Interaction Detection ***  
+# Hand-Object Interaction Detection  
 Hand Object Detector was applied directly.  
 Portable object contact predictions were categorized as hand-object interactions, otherwise, as no interaction.  
 In addition to predicted images, predictions in text files are also generated simultaneously in the function `draw_hand_mask` in [vis_hand_obj.py](hand_object_detector/lib/model/utils/viz_hand_obj.py)  
