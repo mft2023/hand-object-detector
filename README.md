@@ -10,9 +10,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --cuda --checkepoch=8 --checkpoint=132028 
 ```
 
 
-
-
-
+  
 # ***Hand Role Classification***  
 ## 1. Create three folders
 `Datasets` folder: stores raw images from Home and HomeLab datasets. The structure was _Datasets_/{dataset name}/{participant id}/{video id}/images.  
