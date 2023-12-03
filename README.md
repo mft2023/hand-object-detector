@@ -1,6 +1,6 @@
 This repository stores open-source codes for the publication: [Recognizing hand use and hand role at home after stroke from egocentric video](https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000361).  
 
-# Hand Role Classification using Hand Object Detector  
+# ***Hand Role Classification*** using Hand Object Detector  
 In this repository is modified from the original [Hand Object Detector](https://github.com/ddshan/hand_object_detector) to extract hand features for hand role classification. Please clone the original GitHub and replace the _hand-object-detector_ folder with the _hand-object-detector_ folder in this repository. 
 ## 1. Create three folders
 `Datasets` folder: stores raw images from Home and HomeLab datasets. The structure was _Datasets_/{dataset name}/{participant id}/{video id}/images.  
@@ -20,10 +20,9 @@ The training log, `Training_process_{LOSOCV_condition}_sub{participant id}.txt`,
 
 ## 4. Launch testing  
 Choosing the best model in the validation set in each LOSOCV iteration and test it in the left out participant.  
-I also generated predictions in text files while generating image output in function `draw_hand_mask` in [vis_hand_obj.py]{hand_object_detector/lib/model/utils/viz_hand_obj.py}
+I also generated predictions in text files while generating image output in function `draw_hand_mask` in [vis_hand_obj.py](hand_object_detector/lib/model/utils/viz_hand_obj.py)  
 
 ```
-CUDA_VISIBLE_DEVICES=0 python demo.py --cuda --checkepoch={} --checkpoint={} --subj={tested participant ID} image_dir={path to the folder of tested images} --save-dir={path to the folder of generated predictions}
---load_dir={path to the best model}
+CUDA_VISIBLE_DEVICES=0 python results_HandRole.py --cuda --subj=participant_id
 ```
 
