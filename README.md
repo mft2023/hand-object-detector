@@ -11,7 +11,7 @@ CUDA_VISIBLE_DEVICES=0 python demo.py --cuda --checkepoch=8 --checkpoint=132028 
 # ***Hand Role Classification***  
 ## 1. Create three folders
 `Datasets` folder: stores raw images from Home and HomeLab datasets. The structure was _Datasets_/{dataset name}/{participant id}/{video id}/images.  
-`LOSOCV_manip_Home_labels` folder: stores filename, hand side, label {0: stabilization, 1: manipulation} for Home dataset. Labels for the HomeLab dataset in the same format.  
+`LOSOCV_manip_Home_labels` folder: stores filename, hand side, label {0: stabilization, 1: manipulation} for Home dataset. Labels for the HomeLab dataset are in the same format.  
 `Results` folder: stores hand role prediction for each image, including hand side and prediction {0: stabilization, 1: manipulation}.  
 
 ## 2. Create data loader to minimize GPU memory usage.
