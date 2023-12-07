@@ -1,5 +1,5 @@
 This repository stores open-source codes for the publication: [Recognizing hand use and hand role at home after stroke from egocentric video](https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000361).  
-This repository is modified from the original [Hand Object Detector](https://github.com/ddshan/hand_object_detector) to extract hand features for hand role classification. Please clone the original GitHub and replace the _hand-object-detector_ folder with the _hand-object-detector_ folder in this repository.  
+This repository is modified from the original [Hand Object Detector](https://github.com/ddshan/hand_object_detector) to extract hand features for hand role classification. Please clone the original GitHub and replace the original _hand-object-detector_ folder with the _hand-object-detector_ folder in this repository.  
 
 # ***Hand-Object Interaction Detection***  
 Hand Object Detector was applied directly.  
